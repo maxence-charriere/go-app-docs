@@ -6,8 +6,8 @@ import (
 
 	"github.com/gomarkdown/markdown"
 	"github.com/gomarkdown/markdown/parser"
+	"github.com/maxence-charriere/go-app-docs/pkg/ui"
 	"github.com/maxence-charriere/go-app/v11/pkg/app"
-	"github.com/maxence-charriere/go-app/v11/pkg/ui"
 )
 
 type markdownDoc struct {
