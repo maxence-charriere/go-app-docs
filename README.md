@@ -14,8 +14,25 @@ make run
 Open <http://localhost:7777>. To change the port, run
 `GOAPP_DOCS_PORT=8888 make run`.
 
-The build and generated API reference use the `go-app` dependency selected by
-this repository's `go.mod`.
+Each build uses the local `../go-app` checkout when available, including
+uncommitted changes. The API reference and both binaries use that same checkout
+through a temporary Go workspace, which is removed after the build.
+
+To use a checkout elsewhere:
+
+```sh
+make build GOAPP_DIR=/path/to/go-app
+```
+
+When the checkout is unavailable, the build fetches the latest published
+`go-app/v11` release with `go get`, updating `go.mod` and `go.sum` as needed.
+To use the latest release even when a local checkout exists:
+
+```sh
+make build GOAPP_DIR=
+```
+
+`make run` and `make github` use the same selection and accept `GOAPP_DIR` too.
 
 Install Go and `godoc` before building:
 
