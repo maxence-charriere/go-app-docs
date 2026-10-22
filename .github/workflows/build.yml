@@ -1,0 +1,61 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [build]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-main
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: go-app-docs
+    steps:
+      - name: Checkout documentation
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          path: go-app-docs
+
+      - name: Checkout go-app
+        uses: actions/checkout@v7
+        with:
+          repository: maxence-charriere/go-app
+          path: go-app
+          persist-credentials: false
+
+      - name: Set up Go
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: go-app-docs/go.mod
+          cache-dependency-path: |
+            go-app-docs/go.sum
+            go-app/go.sum
+
+      - name: Install godoc
+        run: go install golang.org/x/tools/cmd/godoc@latest
+
+      - name: Build documentation and generate GitHub Pages
+        run: make github GOAPP_DIR=../go-app
+
+      - name: Commit and push generated website
+        run: |
+          git add --all -- docs
+          if git diff --cached --quiet; then
+            echo "No generated website changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update generated documentation"
+          git push origin HEAD:main

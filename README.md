@@ -48,3 +48,38 @@ make build GOAPP_DIR=
 ```
 
 `make run` uses the same selection and accepts `GOAPP_DIR` too.
+
+## Automated builds
+
+The `build` workflow runs on pushes to `main`, including merged pull requests,
+and on `repository_dispatch` events with type `build`. It checks out the latest
+`main` documentation and the default branch of `maxence-charriere/go-app`, then
+runs `make github` with that checkout. This generates the API reference, builds
+the WebAssembly app and `documentation` binary, and generates the GitHub Pages
+files. Changes under `docs/` are committed and pushed to `main`; the local
+`documentation` binary is ignored.
+
+The workflow uses `GITHUB_TOKEN` with `contents: write`. Repository rules must
+allow that token to push to `main`. Its generated commit does not trigger another
+build. It also does not trigger a branch-based GitHub Pages deployment; publishing
+the generated site requires a separate Pages deployment setup.
+
+### Trigger from go-app or another repository
+
+Add this step to the calling workflow on an Ubuntu runner:
+
+```yaml
+- name: Rebuild go-app documentation
+  env:
+    GH_TOKEN: ${{ secrets.GO_APP_DOCS_TOKEN }}
+  run: |
+    gh api --method POST \
+      repos/maxence-charriere/go-app-docs/dispatches \
+      -f event_type=build
+```
+
+Create `GO_APP_DOCS_TOKEN` in the calling repository using a fine-grained personal
+access token with **Contents: write** access to `maxence-charriere/go-app-docs`,
+or supply a GitHub App token with that access. The caller's own `GITHUB_TOKEN`
+cannot access another repository. The workflow must be present on this
+repository's default branch before dispatch events can trigger it.
