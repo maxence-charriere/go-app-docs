@@ -3,26 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="author" content="Maxence Charriere">
-    <meta name="description" content="Documentation about what changed between go-app v8 and v9.">
+    <meta content="Documentation about what changed between go-app v8 and v9." name="description">
     <meta name="keywords" content="go-app, go, golang, app, pwa, progressive web app, webassembly, web assembly, webapp, web, gui, ui, user interface, graphical user interface, frontend, opensource, open source, github">
     <meta name="theme-color" content="#2e343a">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta content="yes" name="mobile-web-app-capable">
-    <meta property="og:url" content="https:///migrate">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="https:///migrate" property="og:url">
     <meta property="og:title" content="Migrate Codebase From go-app v8 To v9">
     <meta property="og:description" content="Documentation about what changed between go-app v8 and v9.">
-    <meta property="og:type" content="website">
-    <meta content="https://go-app.dev/web/images/go-app.png" property="og:image">
+    <meta content="website" property="og:type">
+    <meta property="og:image" content="https://go-app.dev/web/images/go-app.png">
     <title>Migrate Codebase From go-app v8 To v9</title>
     <link rel="icon" href="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.svg">
     <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png">
     <link rel="manifest" href="/manifest.webmanifest">
     <link href="/app.css" type="text/css" rel="stylesheet">
-    <link href="/web/css/prism.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="/web/css/docs.css" type="text/css">
+    <link rel="stylesheet" href="/web/css/prism.css" type="text/css">
+    <link href="/web/css/docs.css" type="text/css" rel="stylesheet">
     <script defer src="/wasm_exec.js"></script>
     <script defer src="/app.js"></script>
-    <script src="/web/js/prism.js" defer></script>
+    <script defer src="/web/js/prism.js"></script>
     <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1013306768105236" crossorigin="anonymous" async></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 	<script defer src="https://www.googletagmanager.com/gtag/js?id=G-SW4FQEM9VM"></script>
@@ -36,7 +36,7 @@
   </head>
   <body>
     <div data-goapp-ui="shell" class="fill background">
-      <div id="goapp-shell-fcddb33a-55f8-48fc-a420-c9b660ae418a" style="display:flex;width:100%;height:100%;overflow:hidden">
+      <div id="goapp-shell-0e4eb6fb-e27d-49ef-a199-ca03cc0d8dca" style="display:flex;width:100%;height:100%;overflow:hidden">
         <div style="position:relative;display:none;flex-shrink:0;flex-basis:270px;overflow:hidden">
           <div data-goapp-ui="scroll" class="menu fill">
             <div style="width:100%;height:calc(100% - 24px);padding:12px 0">
@@ -51,7 +51,7 @@
                 <nav>
                   <div class="separator"></div>
                   <a class="link heading fit unselectable" href="/">
-                    <div style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0" data-goapp="Stack">
+                    <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
                       <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
@@ -62,7 +62,7 @@
                   </a>
                   <a class="link heading fit unselectable" href="/getting-started">
                     <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
-                      <div style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px" data-goapp="Icon">
+                      <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M13.13 22.19L11.5 18.36C13.07 17.78 14.54 17 15.9 16.09L13.13 22.19M5.64 12.5L1.81 10.87L7.91 8.1C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39C21.61 2.39 16.66 .269 11 5.93C8.81 8.12 7.5 10.53 6.65 12.64C6.37 13.39 6.56 14.21 7.11 14.77L9.24 16.89C9.79 17.45 10.61 17.63 11.36 17.35C13.5 16.53 15.88 15.19 18.07 13C23.73 7.34 21.61 2.39 21.61 2.39M14.54 9.46C13.76 8.68 13.76 7.41 14.54 6.63S16.59 5.85 17.37 6.63C18.14 7.41 18.15 8.68 17.37 9.46C16.59 10.24 15.32 10.24 14.54 9.46M8.88 16.53L7.47 15.12L8.88 16.53M6.24 22L9.88 18.36C9.54 18.27 9.21 18.12 8.91 17.91L4.83 22H6.24M2 22H3.41L8.18 17.24L6.76 15.83L2 20.59V22M2 19.17L6.09 15.09C5.88 14.79 5.73 14.47 5.64 14.12L2 17.76V19.17Z" />
 	</svg>
@@ -70,7 +70,7 @@
                       <div>Getting Started</div>
                     </div>
                   </a>
-                  <a class="link heading fit unselectable" href="/architecture">
+                  <a href="/architecture" class="link heading fit unselectable">
                     <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
                       <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -82,7 +82,7 @@
                   </a>
                   <a class="link heading fit unselectable" href="/reference">
                     <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
-                      <div style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px" data-goapp="Icon">
+                      <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                         <svg width="24px" height="24px" viewBox="0 0 207 78" xmlns="http://www.w3.org/2000/svg">
 		<g fill="currentColor" fill-rule="evenodd">
 			<path d="m16.2 24.1c-.4 0-.5-.2-.3-.5l2.1-2.7c.2-.3.7-.5 1.1-.5h35.7c.4 0 .5.3.3.6l-1.7 2.6c-.2.3-.7.6-1 .6z"/>
@@ -149,7 +149,7 @@
                       <div>JavaScript Interoperability</div>
                     </div>
                   </a>
-                  <a href="/concurrency" class="link heading fit unselectable">
+                  <a class="link heading fit unselectable" href="/concurrency">
                     <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
                       <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -159,7 +159,7 @@
                       <div>Concurrency</div>
                     </div>
                   </a>
-                  <a href="/seo" class="link heading fit unselectable">
+                  <a class="link heading fit unselectable" href="/seo">
                     <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
                       <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -169,8 +169,8 @@
                       <div>SEO</div>
                     </div>
                   </a>
-                  <a class="link heading fit unselectable" href="/lifecycle">
-                    <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
+                  <a href="/lifecycle" class="link heading fit unselectable">
+                    <div style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0" data-goapp="Stack">
                       <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M23,12L19,16V13H6.83C6.42,14.17 5.31,15 4,15A3,3 0 0,1 1,12A3,3 0 0,1 4,9C5.31,9 6.42,9.83 6.83,11H19V8L23,12Z" />
@@ -179,7 +179,7 @@
                       <div>Lifecycle and Updates</div>
                     </div>
                   </a>
-                  <a href="/install" class="link heading fit unselectable">
+                  <a class="link heading fit unselectable" href="/install">
                     <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
                       <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -209,7 +209,7 @@
                       <div>Actions</div>
                     </div>
                   </a>
-                  <a href="/states" class="link heading fit unselectable">
+                  <a class="link heading fit unselectable" href="/states">
                     <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
                       <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -232,7 +232,7 @@
                   <div class="separator"></div>
                   <a class="link heading fit unselectable" href="/migrate">
                     <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
-                      <div style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px" data-goapp="Icon">
+                      <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M21,9L17,5V8H10V10H17V13M7,11L3,15L7,19V16H14V14H7V11Z" />
 	</svg>
@@ -261,8 +261,8 @@
                       <div>Twitter</div>
                     </div>
                   </a>
-                  <a class="link heading fit unselectable" href="https://github.com/maxence-charriere/go-app">
-                    <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
+                  <a href="https://github.com/maxence-charriere/go-app" class="link heading fit unselectable">
+                    <div style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0" data-goapp="Stack">
                       <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
@@ -300,7 +300,7 @@
           </div>
         </div>
         <div style="position:relative;display:none;flex-shrink:0;flex-basis:270px;overflow:hidden">
-          <div class="fill" data-goapp-ui="scroll">
+          <div data-goapp-ui="scroll" class="fill">
             <div style="width:100%;height:calc(100% - 24px);padding:12px 0">
               <div style="width:calc(100% - 24px);padding:0 12px;height:72px"></div>
               <div style="width:calc(100% - 24px);height:calc(100% - 72px);padding:0 12px;overflow-x:hidden;overflow-y:scroll">
@@ -308,12 +308,12 @@
                   <div class="separator"></div>
                   <header class="h2">Index</header>
                   <div class="separator"></div>
-                  <a class="index-link" href="#intro" title="Intro">Intro</a>
+                  <a href="#intro" title="Intro" class="index-link">Intro</a>
                   <a class="index-link" href="#changes" title="Changes">Changes</a>
-                  <a href="#general" title="General" class="index-link">    General</a>
+                  <a class="index-link" href="#general" title="General">    General</a>
                   <a class="index-link" href="#components" title="Components">    Components</a>
-                  <a class="index-link" href="#context" title="Context">    Context</a>
-                  <a class="index-link" href="#api-design-decisions" title="API Design Decisions">API Design Decisions</a>
+                  <a href="#context" title="Context" class="index-link">    Context</a>
+                  <a href="#api-design-decisions" title="API Design Decisions" class="index-link">API Design Decisions</a>
                   <div class="separator"></div>
                   <a class="index-link" href="#report-an-issue" title="Report an Issue">Report an Issue</a>
                   <div class="separator"></div>
@@ -336,7 +336,7 @@
                   <article>
                     <header id="page-top" class="page-title center">
                       <div data-goapp="Stack" style="display:flex;justify-content:center;align-items:center">
-                        <div style="width:90px;height:90px;max-width:90px;max-height:90px;min-width:90px;min-height:90px" data-goapp="Icon" class="icon-left unselectable">
+                        <div data-goapp="Icon" class="icon-left unselectable" style="width:90px;height:90px;max-width:90px;max-height:90px;min-width:90px;min-height:90px">
                           <svg style="width:90px;height:90px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M21,9L17,5V8H10V10H17V13M7,11L3,15L7,19V16H14V14H7V11Z" />
 	</svg>
@@ -347,7 +347,7 @@
                     <div class="separator"></div>
                     <div>
                       <aside class="heading fill" style="display:none">
-                        <div style="display:flex;justify-content:center;align-items:center;width:100%;height:100%" data-goapp="Stack">
+                        <div data-goapp="Stack" style="display:flex;justify-content:center;align-items:center;width:100%;height:100%">
                           <div style="width:56px;height:56px;min-width:56px;min-height:56px;border:2px solid currentColor;border-top:2px solid white;border-radius:50%;animation:goapp-spin-frames 500ms linear infinite"></div>
                           <div style="margin-left:18px">
                             <div>Loading migrate.md...</div>
@@ -357,7 +357,7 @@
                     </div>
                     <div class="separator"></div>
                     <aside>
-                      <header id="report-an-issue" class="h2">Report an issue</header>
+                      <header class="h2" id="report-an-issue">Report an issue</header>
                       <p>
                         Found something incorrect, a typo or have suggestions to improve this page? 
                         <a href="https://github.com/maxence-charriere/go-app/issues/new?title=Documentation issue in Migrate From v8 to v9 page">🚀 Submit a GitHub issue!</a>
@@ -375,11 +375,11 @@
           <div data-goapp-ui="flyer" class="fill">
             <div style="width:100%;height:calc(100% - 24px);padding:12px 0">
               <div style="width:calc(100% - 36px);padding:0 18px;height:72px"></div>
-              <div id="goapp-flyer-layout-46200f87-e2c9-4e81-bb7d-273eb1a30c16" style="display:flex;flex-direction:column;justify-content:center;width:calc(100% - 36px);height:calc(100% - 72px);padding:0 18px;overflow:hidden">
+              <div id="goapp-flyer-layout-603134e2-84ba-4925-913a-6284a62902ac" style="display:flex;flex-direction:column;justify-content:center;width:calc(100% - 36px);height:calc(100% - 72px);padding:0 18px;overflow:hidden">
                 <div style="height:0px;overflow:hidden">
                   <aside class="fill">
                     <div data-goapp-ui="adsenseDisplay" class="fill no-scroll">
-                      <ins id="goapp-adsense-display-8d3cc602-61ce-47b0-8860-74a0e9a7bfb4"></ins>
+                      <ins id="goapp-adsense-display-341051c6-e125-4814-b055-0b8592e7fa4a"></ins>
                     </div>
                   </aside>
                 </div>
@@ -435,9 +435,9 @@
                     <div>Home</div>
                   </div>
                 </a>
-                <a href="/getting-started" class="link heading fit unselectable">
+                <a class="link heading fit unselectable" href="/getting-started">
                   <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
-                    <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
+                    <div style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px" data-goapp="Icon">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M13.13 22.19L11.5 18.36C13.07 17.78 14.54 17 15.9 16.09L13.13 22.19M5.64 12.5L1.81 10.87L7.91 8.1C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39C21.61 2.39 16.66 .269 11 5.93C8.81 8.12 7.5 10.53 6.65 12.64C6.37 13.39 6.56 14.21 7.11 14.77L9.24 16.89C9.79 17.45 10.61 17.63 11.36 17.35C13.5 16.53 15.88 15.19 18.07 13C23.73 7.34 21.61 2.39 21.61 2.39M14.54 9.46C13.76 8.68 13.76 7.41 14.54 6.63S16.59 5.85 17.37 6.63C18.14 7.41 18.15 8.68 17.37 9.46C16.59 10.24 15.32 10.24 14.54 9.46M8.88 16.53L7.47 15.12L8.88 16.53M6.24 22L9.88 18.36C9.54 18.27 9.21 18.12 8.91 17.91L4.83 22H6.24M2 22H3.41L8.18 17.24L6.76 15.83L2 20.59V22M2 19.17L6.09 15.09C5.88 14.79 5.73 14.47 5.64 14.12L2 17.76V19.17Z" />
 	</svg>
@@ -455,8 +455,8 @@
                     <div>Architecture</div>
                   </div>
                 </a>
-                <a href="/reference" class="link heading fit unselectable">
-                  <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
+                <a class="link heading fit unselectable" href="/reference">
+                  <div style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0" data-goapp="Stack">
                     <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                       <svg width="24px" height="24px" viewBox="0 0 207 78" xmlns="http://www.w3.org/2000/svg">
 		<g fill="currentColor" fill-rule="evenodd">
@@ -484,7 +484,7 @@
                     <div>Components</div>
                   </div>
                 </a>
-                <a href="/declarative-syntax" class="link heading fit unselectable">
+                <a class="link heading fit unselectable" href="/declarative-syntax">
                   <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
                     <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -524,7 +524,7 @@
                     <div>JavaScript Interoperability</div>
                   </div>
                 </a>
-                <a href="/concurrency" class="link heading fit unselectable">
+                <a class="link heading fit unselectable" href="/concurrency">
                   <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
                     <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -555,7 +555,7 @@
                   </div>
                 </a>
                 <a class="link heading fit unselectable" href="/install">
-                  <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
+                  <div style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0" data-goapp="Stack">
                     <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
@@ -566,7 +566,7 @@
                 </a>
                 <a class="link heading fit unselectable" href="/testing">
                   <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
-                    <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
+                    <div style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px" data-goapp="Icon">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M7,2V4H8V18A4,4 0 0,0 12,22A4,4 0 0,0 16,18V4H17V2H7M11,16C10.4,16 10,15.6 10,15C10,14.4 10.4,14 11,14C11.6,14 12,14.4 12,15C12,15.6 11.6,16 11,16M13,12C12.4,12 12,11.6 12,11C12,10.4 12.4,10 13,10C13.6,10 14,10.4 14,11C14,11.6 13.6,12 13,12M14,7H10V4H14V7Z" />
 	</svg>
@@ -574,7 +574,7 @@
                     <div>Testing</div>
                   </div>
                 </a>
-                <a class="link heading fit unselectable" href="/actions">
+                <a href="/actions" class="link heading fit unselectable">
                   <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
                     <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -617,7 +617,7 @@
                 </a>
                 <a class="link heading fit unselectable" href="/github-deploy">
                   <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
-                    <div style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px" data-goapp="Icon">
+                    <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
 	</svg>
@@ -628,7 +628,7 @@
                 <div class="separator"></div>
                 <a class="link heading fit unselectable" href="https://twitter.com/jonhymaxoo">
                   <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
-                    <div style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px" data-goapp="Icon">
+                    <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
 		<path fill="#1DA1F2" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
 	</svg>
@@ -636,8 +636,8 @@
                     <div>Twitter</div>
                   </div>
                 </a>
-                <a class="link heading fit unselectable" href="https://github.com/maxence-charriere/go-app">
-                  <div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0">
+                <a href="https://github.com/maxence-charriere/go-app" class="link heading fit unselectable">
+                  <div style="display:flex;justify-content:flex-start;align-items:center;padding:3px 0" data-goapp="Stack">
                     <div data-goapp="Icon" style="width:24px;height:24px;max-width:24px;max-height:24px;min-width:24px;min-height:24px;margin-right:6px">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
@@ -676,7 +676,7 @@
       </div>
     </div>
     <aside id="app-wasm-loader" class="goapp-app-info">
-      <img id="app-wasm-loader-icon" class="goapp-logo goapp-spin" alt="wasm loader icon" src="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png">
+      <img src="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png" id="app-wasm-loader-icon" class="goapp-logo goapp-spin" alt="wasm loader icon">
       <p id="app-wasm-loader-label" class="goapp-label">go-app documentation 0%</p>
     </aside>
   </body>
