@@ -1,13 +1,13 @@
 // -----------------------------------------------------------------------------
 // PWA
 // -----------------------------------------------------------------------------
-const cacheName = "app-" + "485409b4e12b9f42c57c634a43fe7909585665d5";
-const resourcesToCache = ["https://raw.githubusercontent.com/maxence-charriere/go-app-docs/main/docs/web/icon.png","https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1013306768105236","/web/js/prism.js","/web/documents/what-is-go-app.md","/web/documents/updates.md","/web/documents/home.md","/web/documents/home-next.md","/web/css/prism.css","/web/css/docs.css","/web/app.wasm","/wasm_exec.js","/manifest.webmanifest","/app.js","/app.css","/"];
+const cacheName = "app-" + "833c51659cd8fd5fe90109d5e42b9de9c9a227e1";
+const resourcesToCache = ["https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png","https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1013306768105236","/web/js/prism.js","/web/documents/what-is-go-app.md","/web/documents/updates.md","/web/documents/home.md","/web/documents/home-next.md","/web/css/prism.css","/web/css/docs.css","/web/app.wasm","/wasm_exec.js","/manifest.webmanifest","/app.js","/app.css","/"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
     try {
-      console.log("installing app worker " + "485409b4e12b9f42c57c634a43fe7909585665d5");
+      console.log("installing app worker " + "833c51659cd8fd5fe90109d5e42b9de9c9a227e1");
       await installWorker();
       await self.skipWaiting();
     } catch (error) {
@@ -27,7 +27,7 @@ self.addEventListener("activate", (event) => {
     try {
       await deletePreviousCaches();
       await self.clients.claim();
-      console.log("app worker " + "485409b4e12b9f42c57c634a43fe7909585665d5" + " is activated");
+      console.log("app worker " + "833c51659cd8fd5fe90109d5e42b9de9c9a227e1" + " is activated");
     } catch (error) {
       console.error("error during activation:", error);
       throw error;
