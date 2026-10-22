@@ -1,17 +1,20 @@
 // -----------------------------------------------------------------------------
 // PWA
 // -----------------------------------------------------------------------------
-const cacheName = "app-" + "0c56a990605188c3d8517c2b3128487e7bbb974b";
+const cacheName = "app-" + "3c5b3e16e525fd5f0b9c0ff87fd90f6fd11cdc46";
 const resourcesToCache = ["https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png","https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1013306768105236","/web/js/prism.js","/web/documents/what-is-go-app.md","/web/documents/updates.md","/web/documents/home.md","/web/documents/home-next.md","/web/css/prism.css","/web/css/docs.css","/web/app.wasm","/wasm_exec.js","/manifest.webmanifest","/app.js","/app.css","/"];
 
-self.addEventListener("install", async (event) => {
-  try {
-    console.log("installing app worker 0c56a990605188c3d8517c2b3128487e7bbb974b");
-    await installWorker();
-    await self.skipWaiting();
-  } catch (error) {
-    console.error("error during installation:", error);
-  }
+self.addEventListener("install", (event) => {
+  event.waitUntil((async () => {
+    try {
+      console.log("installing app worker " + "3c5b3e16e525fd5f0b9c0ff87fd90f6fd11cdc46");
+      await installWorker();
+      await self.skipWaiting();
+    } catch (error) {
+      console.error("error during installation:", error);
+      throw error;
+    }
+  })());
 });
 
 async function installWorker() {
@@ -19,14 +22,17 @@ async function installWorker() {
   await cache.addAll(resourcesToCache);
 }
 
-self.addEventListener("activate", async (event) => {
-  try {
-    await deletePreviousCaches(); // Await cache cleanup
-    await self.clients.claim(); // Ensure the service worker takes control of the clients
-    console.log("app worker 0c56a990605188c3d8517c2b3128487e7bbb974b is activated");
-  } catch (error) {
-    console.error("error during activation:", error);
-  }
+self.addEventListener("activate", (event) => {
+  event.waitUntil((async () => {
+    try {
+      await deletePreviousCaches();
+      await self.clients.claim();
+      console.log("app worker " + "3c5b3e16e525fd5f0b9c0ff87fd90f6fd11cdc46" + " is activated");
+    } catch (error) {
+      console.error("error during activation:", error);
+      throw error;
+    }
+  })());
 });
 
 async function deletePreviousCaches() {
@@ -50,7 +56,7 @@ self.addEventListener("fetch", (event) => {
 });
 
 async function fetchWithCache(request) {
-  const cachedResponse = await caches.match(request);
+  const cachedResponse = await caches.match(request, { cacheName });
   if (cachedResponse) {
     return cachedResponse;
   }
