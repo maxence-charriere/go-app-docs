@@ -44,7 +44,7 @@ jobs:
           echo "Using go-app $tag"
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
-      - name: Checkout tagged go-app
+      - name: Checkout go-app ${{ steps.go-app-version.outputs.tag }}
         uses: actions/checkout@v7
         with:
           repository: maxence-charriere/go-app
