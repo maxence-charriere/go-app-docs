@@ -53,8 +53,9 @@ make build GOAPP_DIR=
 
 The `build` workflow runs on pushes to `main`, including merged pull requests,
 and on `repository_dispatch` events with type `build`. It checks out the latest
-`main` documentation and the default branch of `maxence-charriere/go-app`, then
-runs `make github` with that checkout. This generates the API reference, builds
+`main` documentation and the highest stable version tag (`vX.Y.Z`) of
+`maxence-charriere/go-app`, then runs `make github` with that checkout. Prerelease
+and non-version tags are excluded. This generates the API reference, builds
 the WebAssembly app and `documentation` binary, and generates the GitHub Pages
 files. Changes under `docs/` are committed and pushed to `main`; the local
 `documentation` binary is ignored.

@@ -26,10 +26,29 @@ jobs:
           ref: main
           path: go-app-docs
 
-      - name: Checkout go-app
+      - name: Resolve latest go-app tag
+        id: go-app-version
+        shell: bash
+        run: |
+          tag=$(git ls-remote --tags --refs --sort=-version:refname \
+            https://github.com/maxence-charriere/go-app.git | \
+            awk '!found && $2 ~ /^refs\/tags\/v[0-9]+\.[0-9]+\.[0-9]+$/ {
+              sub(/^refs\/tags\//, "", $2)
+              print $2
+              found = 1
+            }')
+          if [ -z "$tag" ]; then
+            echo "::error::No stable go-app version tag found."
+            exit 1
+          fi
+          echo "Using go-app $tag"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout tagged go-app
         uses: actions/checkout@v7
         with:
           repository: maxence-charriere/go-app
+          ref: refs/tags/${{ steps.go-app-version.outputs.tag }}
           path: go-app
           persist-credentials: false
 
